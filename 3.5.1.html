@@ -1,0 +1,27 @@
+<html>
+<body>
+  <p>Перед скриптом...</p>
+  <script>
+  'use strict'
+  
+  function readNamber(){
+  let nam;
+	do {
+	nam = prompt (`input namber`,``);
+	
+	}
+	while ( !isFinite(nam) );
+	 if (nam === `` || nam === null){
+	 return null
+	 };
+	 
+	return +(nam);
+	};
+  alert (readNamber() );
+  </script>
+
+  <p>...После скрипта.</p>
+
+</body>
+
+</html>

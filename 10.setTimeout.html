@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <META HTTP-EQUIV="Conten-Type" CONTENT="text/html; charset=utf-8">
+  <title>setTimeout </title>
+  <!-- <link rel="stylesheet" href="main.css" Type="text/css"> -->
+</head>
+
+<body>
+  <p>Перед скриптом...</p>
+  <script>
+    'use strict'
+    /*
+        // clear проба чистки
+       let sayHi = setTimeout(() => alert(`Hi`),1000);
+       alert(sayHi);
+       //clearTimeout(sayHi);
+       //alert(sayHi);
+       */
+
+    //функция выыодит 1 каж сек от а до б
+    //через setInterval
+    /*
+    function printNambers(from, to) {
+      let rent = from;
+      let timerId = setInterval(() => {
+        alert(rent);
+        if (rent == to) {
+          clearInterval(timerId);
+        };
+        rent++;
+      }
+        , 1000);
+    }
+    printNambers(2, 22);
+    */
+    //через рекурсию
+    function printNambers(from, to) {
+      let rent = from;
+      setTimeout(function rec() {
+        alert(rent);
+        if (rent < to) {
+          setTimeout(rec, 1000);
+        };
+        rent++;
+      }
+        , 1000);
+    }
+
+    printNambers(2, 10);
+
+
+
+
+  </script>
+
+  <p>...После скрипта.</p>
+
+</body>

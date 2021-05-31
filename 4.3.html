@@ -1,0 +1,39 @@
+!DOCTYPE HTML>
+<html>
+<head>
+<META HTTP-EQUIV="Conten-Type"CONTENT="text/html; charset=utf-8">
+<title>перевод текста в стиль верблюда</title>
+<!-- <link rel="stylesheet" href="main.css" Type="text/css"> -->
+</head>
+<body>
+  <p>Перед скриптом...</p>
+  <script>
+  'use strict'
+  let str_1 = `backgroud-color`,  
+      str_2 = `list-style-image`,
+      str_3 = `-webkit-tranzition`;
+	  
+  let arr_1 = cameliz(str_1),
+      arr_2 = cameliz(str_2),
+      arr_3 = cameliz(str_3);
+	      
+  console.log (arr_1,arr_2,arr_3);
+   
+   
+   function cameliz (str) {
+    return str
+		.split(`-`)
+        .map((word, index) => index == 0 ? word : word[0].toUpperCase() + word.slice(1))
+		.join(``);
+		}
+	
+
+
+  
+  </script>
+
+  <p>...После скрипта.</p>
+
+</body>
+
+</html>

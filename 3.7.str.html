@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+  <p>Перед скриптом...</p>
+  <script>
+  'use strict'
+  let str = prompt (`input string`,`no`),
+      maxlength = 4;
+  function truncate(str, maxlength){
+	  	if ( str.length > maxlength ) {
+		alert (str.substr(0,maxlength - 1) + `..`);
+		} else {	
+		alert (str);
+	 };
+	 console.log (str);
+	 console.log (maxlength);
+	};
+   truncate(str, maxlength);
+
+  </script>
+
+  <p>...После скрипта.</p>
+
+</body>
+
+</html>

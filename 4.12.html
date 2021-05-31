@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<META HTTP-EQUIV="Conten-Type"CONTENT="text/html; charset=utf-8">
+<title>массив с случайными значениями </title>
+<!-- <link rel="stylesheet" href="main.css" Type="text/css"> -->
+</head>
+<body>
+  <p>Перед скриптом...</p>
+  <script>
+  'use strict'
+  // есть массив 1.2.3 надо создать массив со случайными значениями от 1 до 3
+
+  let users = [1, 2, 3]; // массив 
+  
+  function randomSort (array){
+	for (let i = array.length - 1; i > 0; i--){
+	let j = Math.floor(Math.random()*(i+1)); //случайный элемент округляет до целого
+	[array[i],array[j]] = [array[j],array[i]]; //замена местами элементов
+	}
+	}
+/* алгоритм тасования фишера-йетса т.е. проходить по массиву в обратном порядке и менять местами
+каждый элемент со случайным элементом, который находится перед ним
+*/
+	
+	
+  randomSort(users);
+  alert (users); 
+
+  randomSort(users);  
+  alert (users); 
+  
+  randomSort(users);
+  alert (users); 
+  
+ </script>
+
+ <p>...После скрипта.</p>
+
+</body>
+
+</html> 

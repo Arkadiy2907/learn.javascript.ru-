@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+  <p>Перед скриптом...</p>
+  <script>
+  'use strict'
+  let WhoIsIt = prompt("Who Is It",'');
+    if (WhoIsIt=='Admin')
+	{
+	let passwordAdmin = prompt('plese you password Admin','');
+	if (passwordAdmin=='top')
+	{alert('you top');
+	}
+	else if (passwordAdmin==null||passwordAdmin=='')
+	{alert ('escape');
+	}
+	else 
+	{alert ('you password false');
+	}
+	}
+  else if(WhoIsIt==null||WhoIsIt=='')
+  {alert ('escape');
+  }
+  else 
+  {alert ('i don`t know you');
+  }	
+  </script>
+
+  <p>...После скрипта.</p>
+
+</body>
+
+</html>

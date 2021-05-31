@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<META HTTP-EQUIV="Conten-Type"CONTENT="text/html; charset=utf-8">
+<title>работа с датой </title>
+<!-- <link rel="stylesheet" href="main.css" Type="text/css"> -->
+</head>
+<body>
+  <p>Перед скриптом...</p>
+  <script>
+  /*let date = new Date(2012,1,19,03,12); //создали объект с датой 20 фев 2012 и вр 3ч 12мин
+     
+// (2)создали функцию возвращоющую дни недели
+  function getDayNow(date){
+	let days = ['sunday','monday','tuesday','wednesday','thursday','friday','saturday'];
+	return days[date.getDay()];
+  } 	
+  
+  alert(getDayNow(date));
+   */
+   /*
+// (3)создали функцию возвращоющую дни недели с пн а не с вс
+  let date = new Date(2012,1,19,03,12) 
+
+  function getDayLocal(date){
+	let days = [0,'monday','tuesday','wednesday','thursday','friday','saturday','sunday'];
+	if (days[date.getDay()] == 0){
+			return days[7]
+	} else {
+	return days[date.getDay()];
+  }
+  }; 	
+  
+  alert(getDayLocal(date));
+    */
+// (4)создать вычет даты (какой день быль при вычете х-дней)	
+	/*let date = new Date(2015,0,2);
+	
+	function getDayAgo(date,xDay){
+	 let copyDate = new Date(date); // чтоб не менять объект копируем его
+	 copyDate.setDate(date.getDate()- xDay);//вычли количесво х-дней назад от заданной
+	 let allDate = [copyDate.getDate(), copyDate];
+	//return copyDate.getDate();// сколько дней назад
+	//return	   copyDate;	//полная дата
+	return allDate;
+	}
+  alert(getDayAgo(date,2));*/
+  
+ // (5)функция показывающая последний день месяца
+  
+  /*let date = new Date(2014,2);
+	
+	function getLastDayMonth(date){
+	 
+	 let copyDate = new Date(date); // чтоб не менять объект копируем его
+	
+	// copyDate.setMonth(date.getMonth() + 1);//установил и прибавил +1 месяц
+	// затем из прибавленного месяца вычел 1день перескочить на конец предыдущего месяца
+	 copyDate.setDate(date.getDate(copyDate.setMonth(date.getMonth() + 1)) - 1);	 
+	 
+
+	return copyDate;
+	}
+  alert(getLastDayMonth(date));
+  */
+ // (6) сколько прошло сегодня секунд
+	/*let date = new Date();		
+	function getLastSek(){
+	
+		return (date.getHours() * 3600) + (date.getMinutes() *60) + date.getSeconds();
+	}//отдельно взяли часы и умножил на 3600 в сек, затем минуты на 60 и  сек и все сложил
+  alert(getLastSek());
+   */
+   /*
+// (7) сколько осталось сегодня секунд
+	let date = new Date();		
+	function getLastSek(){
+	
+	let allHours = 23 - date.getHours(); //оставшихся часов 23 т к 23ч+59мин+60сек=24ч
+	let allMinutes = 59 - date.getMinutes();//оставшихся минут
+	let allSeconds = 60 - date.getSeconds();//оставшихся сек
+	
+	console.log(allHours);
+	console.log(allMinutes);
+	console.log(allSeconds);
+	
+	return (allHours * 3600) + (allMinutes * 60) + allSeconds;
+
+	}
+  alert(getLastSek());   
+  */
+  // (8) вывод сообщений в зависимости от фиксир-й даты и заданной при разнице больше часа
+  // то вывести день,мес,год чч:мин (где день и мес выводим с нулем с переди когда одна цифра)
+	let fixDate = new Date(2020,09,30,11,50,50);
+    let date = new Date(2020,11,5,3,0,50);
+	function formatDate(date, fixDate){
+	dataSec = date.getTime()/1000;// перевод в секунды
+	fixDataSec = fixDate.getTime()/1000;// перевод в секунды
+	let diff = dataSec - fixDataSec;//разность в сек
+	
+	if( diff <= 1 ){ 
+	alert (`прямо сейчас`);
+	}else if((diff > 1) && (diff <= 60) ){
+	alert (`${diff} сек назад`);
+	}else if((diff > 60) && (diff <= 3600) ){
+	alert (`${diff/60} минут назад`);
+	}else if(diff > 3600){
+	
+	let yearOld = date.getFullYear();
+	let yearNew = yearOld
+						.toString()//переводим в строку
+						.slice(-2);// обрезаем первый две цифры
+	let monthOld = date.getMonth()+1;// прибавил 1 т к месяц начинается с 0 по 11
+	let monthNew = monthOld < 10 ? ('0'+monthOld): monthOld;
+	let daysOld = date.getDate();
+	let daysNew = daysOld < 10 ? ('0'+daysOld) : daysOld;
+	console.log(daysNew); 
+	let hourse = date.getHours() < 10 ? ('0'+date.getHours()): date.getHours();
+	let min = date.getMinutes() < 10 ? ('0'+date.getMinutes()): date.getMinutes();
+	
+	alert (`${daysNew}.${monthNew}.${yearNew}, ${hourse}:${min}`);
+	
+	
+		
+	}
+		
+		
+	}
+    formatDate(date, fixDate);
+ </script>
+
+ <p>...После скрипта.</p>
+
+</body>
+
+</html> 

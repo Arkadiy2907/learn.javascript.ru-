@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<META HTTP-EQUIV="Conten-Type"CONTENT="text/html; charset=utf-8">
+<title>рекурсия4 </title>
+<!-- <link rel="stylesheet" href="main.css" Type="text/css"> -->
+</head>
+<body>
+  <p>Перед скриптом...</p>
+  <script>
+  'use strict'
+  // перебрать односвязный список объект list
+ let list = {
+	value : 1,
+	next : {
+		value : 2,
+		next : {
+			value : 3,
+			next : {
+				value : 4,
+				next : null
+			}
+		}
+	}
+	}
+/*	
+ // при помощи цикла
+ function print(n){
+ let temp = n;
+ while(temp){
+ alert(temp.value);
+ temp = temp.next;
+ }
+  };
+ print(list);
+*/ 
+ 
+ 
+ //при помощи рекурсии мой вариант
+ /*
+ function print(list){
+ 
+	 if (list.next == null){ 
+	  alert(list.value);   //дошел до базы с null
+	  	} else {
+	  alert(list.value);
+	  list = print(list.next);
+	  
+	  //console.log(temp.next)
+ };  
+ } 
+    print(list);
+*/
+ //при помощи рекурсии из учебника
+   function print(list){
+   alert(list.value); //выводим текущий элемент
+	 if (list.next){
+	   print(list.next);//тоже для остальной части списка
+	  }
+	} 
+    print(list);
+
+ </script>
+
+ <p>...После скрипта.</p>
+
+</body>
+
+</html> 

@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<META HTTP-EQUIV="Conten-Type"CONTENT="text/html; charset=utf-8">
+<title>фильтрация по диапазону остальное удаляет</title>
+<!-- <link rel="stylesheet" href="main.css" Type="text/css"> -->
+</head>
+<body>
+  <p>Перед скриптом...</p>
+  <script>
+  'use strict'
+	function filterRangeInPlace (arr, a, b) {
+		for (let i=0; i <= arr.length; i++) {
+		 let perebor = arr[i];
+		 if (perebor < a || perebor > b) {
+		 arr.splice(i, 1);
+		 i--;
+		 }
+		}; 
+	};	
+ 
+ 
+    //function filterRangeInPlace (arr, a, b) {
+    //let result = arr.filter(item => (a <= item && item <= b) );
+	//arr.splice(0,arr.length);
+	//arr = result;
+	//return arr;
+	//}
+	
+  let arr = [5,3,8,1];
+  
+  filterRangeInPlace (arr, 1, 4);
+  
+  alert (arr);		
+  
+
+
+
+  
+  </script>
+
+  <p>...После скрипта.</p>
+
+</body>
+
+</html>

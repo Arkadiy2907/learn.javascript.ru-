@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>menu</title>
+  <meta name="description" content="меню, которое по нажатию открывается либо закрывается">
+  <style type="text/css">
+    .menu ul {
+      margin: 0;
+      list-style: none;
+      padding-left: 20px;
+      display: none;
+    }
+    .menu .title::before {
+      content: '▶';
+      font-size: 100%;
+      color: chartreuse;
+    }
+
+    .menu.open .title::before {
+      content: '▼';
+      font-size: 60%;
+    }
+    .menu.open ul {
+      display: block;
+    }
+    
+  </style>
+</head>
+<body>
+  <div id="sweet" class="menu">
+    <span class="title">меню нажми сюды</span>
+    <ul>
+      <li>ice creme</li>
+      <li>apple</li>
+      <li>chocolate</li>
+    </ul>
+  </div>
+  <script>
+    let menuElement = document.getElementById('sweet');
+    let titleElement = menuElement.querySelector('.title');
+    titleElement.onclick = function(){
+      menuElement.classList.toggle('open');
+    }
+  </script>
+</body>
+</html>

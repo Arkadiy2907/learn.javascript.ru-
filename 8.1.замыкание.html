@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<META HTTP-EQUIV="Conten-Type"CONTENT="text/html; charset=utf-8">
+<title>замыкание </title>
+<!-- <link rel="stylesheet" href="main.css" Type="text/css"> -->
+</head>
+<body>
+  <p>Перед скриптом...</p>
+  <script>
+  'use strict'
+  // отсортировать по возрасту, по имени 
+	let users = [
+		{name: `Vasija`, age: 22, surname: `Ivanov`},
+		{name: `Petija`, age: 23, surname: `Petrov`},
+		{name: `Anija`, age: 21, surname: `Sidorova`}
+		];
+	//console.log(users.sort((a, b) => a.age > b.age ? 1: -1));	
+	
+	function byField(x){
+	    return ((a,b) => a[x] > b[x] ? 1: -1);
+		};
+	 
+	//users.sort(byField(`age`));
+	//users.forEach(item => alert(item.name));
+	console.log(byField(`age`));//тут в ф передалось значение age но не запускается	
+	console.log(users.sort(byField(`age`)));//при запросе от сорт передается в ретерн значение х=age
+	console.log(users.map(item => item.name));//просто перебор че получилось
+
+
+	console.log(users.sort(byField(`name`)));// по имени
+	console.log(users.map(item => item.name));	
+ </script>
+
+ <p>...После скрипта.</p>
+
+</body>

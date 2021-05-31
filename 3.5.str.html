@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<META HTTP-EQUIV="Conten-Type"CONTENT="text/html; charset=utf-8">
+<title>ввод с большой буквы</title>
+<!-- <link rel="stylesheet" href="main.css" Type="text/css"> -->
+</head>
+<body>
+  <p>Перед скриптом...</p>
+  <script>
+  'use strict'
+  let str = prompt (`input string`,`no`);
+  function upOneCase(str){
+	return(`${str}`[0].toUpperCase() + `${str}`.slice(1) );
+	};
+  alert( upOneCase(str) );
+  </script>
+
+  <p>...После скрипта.</p>
+
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>move ball</title>
+  <meta name="description" content="задача: перемещение мяча по выделенному полю от нажатия клавиши мышки">
+  <style type="text/css">
+    #field{
+      height: 100px;
+      width: 200px;
+      background: green;
+      border: 5px solid black;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    #ball{
+      height: 25px;
+      width: 25px;
+      border-radius: 50%;
+      background: crimson;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: all 1s;
+    }
+  </style>
+</head>
+<body style="height: 2000px;">
+<div id="field">
+  <div id="ball"></div>
+</div> 
+<script>
+  field.onclick = function(event){
+  
+    let coordsField = this.getBoundingClientRect();//координаты поля относительно окна браузера
+    let coordsBall = {//расчет координат мяча относительно поля
+      //из коор-т клика вычитаем координаты поля и толщину бордюра и половину мяча
+      top: event.clientY - coordsField.top - field.clientTop - ball.clientHeight/2,
+      left: event.clientX - coordsField.left - field.clientLeft - ball.clientWidth/2
+    };
+    //запрет на пересечение мяча за границы поля
+    if(coordsBall.top < 0) coordsBall.top = 0;//выше поля
+    if(coordsBall.left < 0) coordsBall.left = 0;//левее поля
+    if(coordsBall.top + ball.clientHeight > field.clientHeight) {
+      coordsBall.top = field.clientHeight - ball.clientHeight;
+    };//ниже поля
+    if(coordsBall.left + ball.clientWidth > field.clientWidth) {
+      coordsBall.left = field.clientWidth - ball.clientWidth;
+    };//правее поля
+    //добавление стиля для мяча
+    ball.style.left = coordsBall.left + 'px';
+    ball.style.top = coordsBall.top + 'px';
+
+  }
+</script> 
+</body>
+</html>

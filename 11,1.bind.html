@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>bind</title>
+</head>
+<body>
+  <script>
+`use strict`
+//пофиксить баг
+function askPassword(ok, fail) {
+  let password = prompt("Please write password",'');
+  if (password == "roc") {
+    ok();
+  } else{
+    fail();
+  }
+};
+let user = {
+  name: "Vova",
+  login(result){
+    alert(this.name+(result ? " let`s go" : " stop") );
+  }
+};
+//вписал в контекст user а в качестве result true/false
+askPassword(user.login.bind(user, true), user.login.bind(user, false));
+
+  </script>
+</body>
+</html>

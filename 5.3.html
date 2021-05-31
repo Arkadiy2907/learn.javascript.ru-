@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<META HTTP-EQUIV="Conten-Type"CONTENT="text/html; charset=utf-8">
+<title>сложение величин объекта </title>
+<!-- <link rel="stylesheet" href="main.css" Type="text/css"> -->
+</head>
+<body>
+  <p>Перед скриптом...</p>
+  <script>
+  'use strict'
+   let price = {
+   'banana': 100,
+   'orange': 200,
+   'mandarin': 300
+   };
+	
+  function sumSaleris (object){
+  let sum = 0;
+  for (let item of Object.values(object)) {
+   sum += item; 
+  } //перебираем значения объекта и складываем их
+  return sum;
+  };
+  
+  alert(sumSaleris(price));  
+  	
+  
+ </script>
+
+ <p>...После скрипта.</p>
+
+</body>
+
+</html> 

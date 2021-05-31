@@ -1,0 +1,48 @@
+<head>
+</head>
+<script>
+function intRand(maxVal)
+{
+return Math.round((maxVal+1)*Math.random()-0.5);
+}
+function fillMines(rowCount, colCount, minesCount)
+{
+var res=new Array(rowCount*colCount);
+var mines=minesCount;
+while (mines>0)
+{
+var n=intRand(rowCount*colCount-1);
+if (res[n]!=1)
+{
+res[n]=1;
+mines--;
+}
+}
+return res;
+}
+function initTable()
+{
+var rowCount=10;
+var colCount=10;
+var minesCount=10;
+var mines=fillMines(rowCount, colCount, minesCount);
+var tbl=document.getElementById('tbl');
+for (var i=0; i<rowCount; i++)
+{
+var row=tbl.insertRow(i);
+for (var j=0; j<colCount; j++)
+{
+var cell=row.insertCell(j);
+if (mines[i*rowCount+j]==1)
+cell.innerHTML='*'
+else
+cell.innerHTML='.';
+}
+}
+}
+</script>
+<body onload='initTable();'>
+<table id='tbl' border='2' width='80%' height='80%'>
+</table>
+</body>
+</html>

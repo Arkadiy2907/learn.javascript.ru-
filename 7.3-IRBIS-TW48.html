@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<META HTTP-EQUIV="Conten-Type"CONTENT="text/html; charset=utf-8">
+<title>рекурсия3 </title>
+<!-- <link rel="stylesheet" href="main.css" Type="text/css"> -->
+</head>
+<body>
+  <p>Перед скриптом...</p>
+  <script>
+  'use strict'
+  // вычисление чисел фибоначи F0=0, F1=1, Fn=F(n-1)+F(n-2)
+ //0 1 1 2 3 5 8 13 21....
+ // при помощи цикла
+  function getFibonachi(n){
+   
+   
+    for (let i = 2; i < n ; i++){
+	 let sum = (i-1)+(i-2);
+	 
+	let result = [0,1];
+	result.push(sum);
+	console.log(result);
+	return result
+	}
+	let and = result.length;
+	alert (result[`${and}`]);
+  }
+	alert(getFibonachi(6));
+
+ /*
+ //при помощи рекурсии
+ function getFactorial (n){
+	 return n == 1 ? n: n * getFactorial(n-1);
+ }  
+  
+   console.log(getFactorial(2));
+*/
+ </script>
+
+ <p>...После скрипта.</p>
+
+</body>
+
+</html> 

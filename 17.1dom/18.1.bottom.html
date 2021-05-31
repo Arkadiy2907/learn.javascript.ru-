@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <meta name="description" content="задача 1: Добавьте JavaScript к кнопке button, чтобы при нажатии элемент div id=text исчезал.">
+  <meta name="description" content="задача 2: Создайте кнопку, которая будет скрывать себя по нажатию.">
+</head>
+<body>
+  <!-- задача 1 -->
+   <!-- <input type="button" id="clearText" value="нажми меня чтоб текст исчез">
+  <div id="text">text</div>
+  
+  <script>
+    
+    //задача 1
+    clearText.onclick = function clear(){
+      let elem = document.getElementById('text');
+      elem.hidden = true;      
+    }  
+  </script> -->
+
+      
+  <!-- задача 2 -->
+    <input type="button" id="clearText" onclick="this.hidden = true" value="нажми меня чтоб текст исчез">    
+
+    <script>
+    //задача 2 мой вариант
+/*     clearText.onclick = function clear(){
+      let elem = document.getElementById('clearText');
+      elem.hidden = true;
+    }   */
+   
+  </script>
+ 
+
+</body>
+</html>

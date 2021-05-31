@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<META HTTP-EQUIV="Conten-Type"CONTENT="text/html; charset=utf-8">
+<title>средний возраст </title>
+<!-- <link rel="stylesheet" href="main.css" Type="text/css"> -->
+</head>
+<body>
+  <p>Перед скриптом...</p>
+  <script>
+  'use strict'
+  // есть массив надо создать функцию высчитывающую средний возраст
+
+  // есть массив объектов users с name, age
+  let vasya = {name: `вася`, age: 38};
+  let petya = {name: `петя`, age: 22};  
+  let masha = {name: `маша`, age: 31};		
+  
+  let arr = [vasya, petya, masha]; // массив 
+  
+  function getAverageAge (users){
+	return users.reduce((sum, item) => sum + item.age, 0) / users.length;//все складываем и делим на длинну массива
+	}
+
+	
+	
+
+  alert (getAverageAge(arr));  
+  
+ </script>
+
+ <p>...После скрипта.</p>
+
+</body>
+
+</html> 

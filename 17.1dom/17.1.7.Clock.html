@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>часы</title>
+  <style>
+    .wrap {
+      width: 150px;
+      border: 2px solid indigo;
+    }
+    span {
+      font-size: 20px;
+    }
+    .hours {
+      color: rgb(53, 187, 131); ;
+    }
+    .min {
+      color: rgb(252, 0, 252);
+    }
+    .sec {
+      color:red;
+    }
+  </style>
+</head>
+<body>
+<!--вывод часов-->
+<div class="wrap">
+  <div id="timeNow">
+    <!-- <span class="year"></span> --><span class="hours">hh</span>:<span class="min">mm</span>:<span class="sec"></span>
+  </div>
+  <input type="button" onclick="startClock()" value="Start">
+  <input type="button" onclick="stopClock()" value="Stop">
+</div>
+
+
+<script>
+  let timerId;
+  function times() {
+    let clock = document.getElementById('timeNow');
+    let date = new Date();
+
+    /* let year = date.getFullYear()
+    year = null;
+    clock.children[0].innerHTML = year; */
+
+    let hours = date.getHours();
+    hours < 10 ? hours = '0' + hours: hours;
+    clock.children[0].innerHTML = hours;
+
+    let min = date.getMinutes();
+    min < 10 ? min = '0' + min: min;
+    clock.children[1].innerHTML = min;
+
+    let sec = date.getSeconds();
+    sec < 10 ? sec = '0' + sec: sec;
+    clock.children[2].innerHTML = sec;
+    
+  }
+  function startClock() {
+    timerId = setInterval(times, 1000);
+    times();
+  }
+  function stopClock() {
+    clearInterval(timerId);
+  }
+  startClock();
+
+
+
+  
+  
+</script>
+</body>
+</html>

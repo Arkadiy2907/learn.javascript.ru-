@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>proto</title>
+</head>
+<body>
+  <script>
+`use strict`
+//проверка по учебнику примеров
+/* let animal = {
+  fox : "Alisa"
+};
+let zoo = {
+  wolf : "Ivan"
+};
+zoo.__proto__ = animal;
+alert(zoo.fox);
+animal.foxHi = function(){
+  alert("hi");
+}
+console.log(zoo.foxHi()); */
+
+let animal = {
+  walk(){
+    if(!this.isSleeping){
+      alert("i walk");
+    }
+  },
+  sleep(){
+    this.isSleeping = true;
+  }
+};
+
+let wolf = {
+  name: "white wolf",
+  __proto__: animal
+};
+
+wolf.sleep();
+console.log(wolf.isSleeping);
+animal.sleep();
+console.log(animal.isSleeping);
+  </script>
+</body>
+</html>

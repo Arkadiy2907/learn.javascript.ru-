@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<META HTTP-EQUIV="Conten-Type"CONTENT="text/html; charset=utf-8">
+<title>выставить по возросту </title>
+<!-- <link rel="stylesheet" href="main.css" Type="text/css"> -->
+</head>
+<body>
+  <p>Перед скриптом...</p>
+  <script>
+  'use strict'
+  // есть массив объектов users с name, age
+  let vasya = {name: `вася`, age: 38};
+  let petya = {name: `петя`, age: 22};  
+  let masha = {name: `маша`, age: 31};		
+  
+  let users = [vasya, petya, masha]; // массив объектов
+  
+  function userSort (arr){
+	arr.sort((a,b) => a.age > b.age ? 1 : -1);//сортируем по возросту
+	}
+
+	
+	
+  userSort(users);
+  
+
+  alert (users[0].name);   
+  alert (users[1].name); 
+  alert (users[2].name); 
+  
+ </script>
+
+ <p>...После скрипта.</p>
+
+</body>
+
+</html> 

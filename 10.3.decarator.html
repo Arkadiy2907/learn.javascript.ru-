@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    'use strict'
+//создать декоратор delay(f,ms) который задерж каждый вызов f на мс
+//решение должно передавать все аргументы и this
+function f(x){
+  alert(x);
+}
+/*
+function delay(f, time){
+  return function(){
+   setTimeout(() => f.apply(this, arguments), time);
+ };  
+}
+*/
+//второй вариан через переменную memory по кот передаетя this 
+function delay(f,ms) {
+  
+  return function (...args) {
+    let memory = this;
+    setTimeout( function (){
+      f.apply(memory, args);
+    }, ms);
+  }
+}
+
+let f1000 = delay(f,1000);
+f1000("test");
+
+  </script>
+ 
+</body>
+</html>

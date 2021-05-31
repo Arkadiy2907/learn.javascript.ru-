@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>создать список</title>
+</head>
+<body>
+  <!-- создать список ЛИ по запросу и если отмена или пусто то выход -->
+  <p>1</p>
+  <ul></ul>
+  <script>
+    //создается свой UL
+    /* let ul = document.createElement(`ul`);
+    document.body.append(ul);
+     */
+    //или ищем в имеющемся
+      let ul = document.querySelector('ul');
+      do {
+      let newLi = prompt(`введите текст`,``);
+      if (!newLi){
+       break; 
+      }
+      let li = document.createElement(`li`);
+      li.textContent = newLi;
+      
+      ul.append(li);
+    }
+    while (true);
+
+  </script>
+</body>
+</html>

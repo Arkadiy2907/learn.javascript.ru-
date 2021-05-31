@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<META HTTP-EQUIV="Conten-Type"CONTENT="text/html; charset=utf-8">
+<title>сумма</title>
+<!-- <link rel="stylesheet" href="main.css" Type="text/css"> -->
+</head>
+<body>
+  <p>Перед скриптом...</p>
+  <script>
+  'use strict'
+  
+    function Calculator (){
+		this.read = function(){
+		 this.a = +prompt (`input a`, 1);
+		 this.b = +prompt (`input b`, 1);
+        };
+	
+		this.sum = function(){
+		 return this.a + this.b;
+		};
+	};
+	let calculator = new Calculator();
+	calculator.read();
+	alert( calculator.sum() );
+  </script>
+
+  <p>...После скрипта.</p>
+
+</body>
+
+</html>

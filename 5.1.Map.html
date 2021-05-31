@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<META HTTP-EQUIV="Conten-Type"CONTENT="text/html; charset=utf-8">
+<title>фильтрация аннаграм </title>
+<!-- <link rel="stylesheet" href="main.css" Type="text/css"> -->
+</head>
+<body>
+  <p>Перед скриптом...</p>
+  <script>
+  'use strict'
+  // есть аннаграмы (-это набор одинаковых букв но в разной последовательности ) надо чтоб они не повторялись дважды
+
+   
+  let users = ['vasya', 'petya', 'masha', 'vasya','dima', 'ahsam']; // массив 
+  
+  function uniElement (arr){
+	let map = new Map() //создаем map
+	for (let str of arr){
+		let sorted = str.toLowerCase()	//приводим к нижнему регистру
+						.split('')		//разделяем с пробелом строку в буквы
+						.sort()			//сортируем по буквам согласно языка программирования
+						.join('');		//соединяем в строку уже отсортированные буквы
+			map.set(sorted, str);	//записывает по ключу sorted значение отсортированной строки str
+//если будет аннаграма этого слова то запишется уже новое слово но под старым ключом			
+//это создаем ключ если сортированная строка равна нов сорт. строке то в этот ключ записываем новую не сортированную строку					
+	}
+	return Array.from (map.values());//принимается итерируемый (перебранный по значению)объект и создается массив
+	}
+
+  alert (uniElement(users));
+				
+ </script>
+
+ <p>...После скрипта.</p>
+
+</body>
+
+</html> 

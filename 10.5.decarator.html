@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Decarator</title>
+</head>
+<body>
+<script>
+`use strict`
+//декоратор отбивающий вызовы ф-и в течении ms после вызова этой ф-и
+//а зетем вызывает последний вызов который был заблокирован при раб ф-и
+
+function f(x) {
+  alert(x);
+}
+function throttle(f, ms) {
+  let isSwtich = false,
+  savedArgs, savedThis;
+  function wrapper() {
+    if(isSwtich) {  //(2)
+      //запоминаем последние аргументы для вызова после задержки
+      savedArgs = arguments;
+      savedThis = this; 
+      return;
+    }
+    f.apply(this, arguments);//(1)
+    isSwtich = true;
+    
+    setTimeout(function() {
+      isSwtich = false; //(3)
+     if(savedArgs){
+       // рекурсивный вызов запускает ф-ю и снова устанавливает задержку
+      wrapper.apply(savedThis, savedArgs);
+      savedArgs = savedThis = null;
+     }
+    }, ms);
+  }
+   return wrapper;
+}
+/* 
+(1)во время первого вызова обертка просто вызывает ф-ю f и 
+устанавливает состояние задержки isSwtich = true
+(2)в этом состоянии все вызовы запоминаются в savedThis, savedArgs
+(3)затем по прошествии ms сработает setTimeout, состояние задержки
+сбрасывается isSwtich = false, и если были проигнорированны вызовы
+то обертка рекурсивно выполнится с последними контекстом и аргументами.
+в шаге (3)выполняется не ф-я f а wrapper
+*/
+ let ff = throttle(f, 1000);
+ ff(1);
+ ff(2);
+ ff(3);
+</script>  
+</body>
+</html>

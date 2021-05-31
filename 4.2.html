@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<META HTTP-EQUIV="Conten-Type"CONTENT="text/html; charset=utf-8">
+<title>сумма с ввода</title>
+<!-- <link rel="stylesheet" href="main.css" Type="text/css"> -->
+</head>
+<body>
+  <p>Перед скриптом...</p>
+  <script>
+  'use strict'
+
+   function sumInput() {
+   let  arr =[];
+    while (true){
+    let namber = prompt (`input namber`, `0`);
+    
+	 if (namber === `` || namber === null || !isFinite(namber) )
+       break;
+  
+	 arr.push(+namber);
+	 }
+	 let sum = 0;
+	 for (let arrais of arr){ 
+	   
+	 sum += arrais;
+	 
+	   
+	
+     };
+     return sum;
+    
+   };
+   alert (sumInput() );
+
+  
+  </script>
+
+  <p>...После скрипта.</p>
+
+</body>
+
+</html>

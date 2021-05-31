@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<META HTTP-EQUIV="Conten-Type"CONTENT="text/html; charset=utf-8">
+<title>свойства функции </title>
+<!-- <link rel="stylesheet" href="main.css" Type="text/css"> -->
+</head>
+<body>
+  <p>Перед скриптом...</p>
+  <script>
+  'use strict'
+  // написать функцию счетчик чтоб можно сбрасывать и уменьшать
+ /* //через свойства функции
+	function makeCounter(){
+		let count = 0;	
+		function counter(){
+			return count++;
+		};	
+		counter.set = (value) => count = value;
+		counter.decrease = () => count--;
+		return counter;
+		
+	}
+	
+	let oneGet = makeCounter();
+	console.log(oneGet());
+	console.log(oneGet());
+	oneGet.set(10);
+	console.log(oneGet());
+	oneGet.decrease();
+	console.log(oneGet());
+*/
+
+// мой вариант но логика не получилась
+	function makeCounter(){
+		let count = 0;
+		this.set = function(value){
+		return count = value;
+		};
+		this.counter = function(){
+			return count++;
+		};
+		this.decrease = function (){
+			return count--;
+		};
+	}
+	
+	let oneGet = new makeCounter();
+	
+	console.log(oneGet.counter());
+	console.log(oneGet.counter());
+	console.log(oneGet.set(10));
+	console.log(oneGet.decrease());
+	console.log(oneGet.counter());
+	
+
+ </script>
+
+ <p>...После скрипта.</p>
+
+</body>

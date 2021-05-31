@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<META HTTP-EQUIV="Conten-Type"CONTENT="text/html; charset=utf-8">
+<title>проверка работы WeakSet </title>
+<!-- <link rel="stylesheet" href="main.css" Type="text/css"> -->
+</head>
+<body>
+  <p>Перед скриптом...</p>
+  <script>
+  'use strict'
+  let visitSet = new Set();//задал сет
+  let vasya = {name: `вася`};
+  let petya = {name: `петя`};  
+  let masha = {name: `маша`};	
+  
+  let arr = [vasya, petya];
+  visitSet.add(vasya); //посетили
+  visitSet.add(vasya);
+  visitSet.add(masha);
+  
+  console.log(visitSet.has(vasya));//труе
+  console.log(vasya);//{name: `вася`};
+  console.log(arr[0]);//{name: `вася`};
+  vasya = null; //обнулил вася
+  console.log(vasya);//null
+  console.log(arr[0]);//{name: `вася`};
+  console.log(visitSet.has(vasya));//фэлс
+//т е обнулился только сет а ссылка в массиве на объект осталась с {name: `вася`};
+  
+  /*let visitSet = new WeakSet();//задал слабый сет
+  let vasya = {name: `вася`};
+  let petya = {name: `петя`};  
+  let masha = {name: `маша`};	
+  
+  visitSet.add(vasya); //посетили
+  visitSet.add(vasya);
+  visitSet.add(masha);
+  
+  console.log(visitSet.has(vasya));//труе
+  vasya = null; //обнулил вася
+  console.log(visitSet.has(vasya));//фэлс
+  console.log(visitSet.has(masha));//труе
+  console.log(visitSet.has(petya));//фэлс
+	*/			
+ </script>
+
+ <p>...После скрипта.</p>
+
+</body>
+
+</html> 

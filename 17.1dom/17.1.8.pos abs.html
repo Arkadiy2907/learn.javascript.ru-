@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>position</title>
+  <meta name="description" content="вставка записи перед текстом, в текст, после текста с position: absolute">
+</head>
+<body>
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas mollitia provident odit animi pariatur libero voluptates, rerum voluptatem natus, ipsa adipisci inventore dolores laboriosam nam dignissimos facere corporis dolorum nulla.</p>
+  <div id ="coords-show-mark"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet suscipit sit magni? Magni dolor nam quia corporis, eos voluptatibus vero maiores officia, vel, nisi dolorem velit rem recusandae. Alias, earum.</p>
+  </div>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo vel iure quasi delectus, consectetur et eos corrupti reiciendis dolorem labore ducimus harum vitae exercitationem odit tenetur, assumenda explicabo eaque ipsum.</p>
+  <style>
+    #coords-show-mark {
+      padding-left: 15px;
+      width: 800px;
+    }
+    body {
+      height: 2000px;
+    }
+  </style>
+  <script>
+ 
+    let anchor = document.getElementById("coords-show-mark");
+    
+    function showNote(anchor, position, html){
+      let elem = document.createElement('div'); //создали элемент      
+      elem.style.cssText = "position: absolute; height = 30px; color: red"; // для стилей 
+      //positionAt(anchor, position, elem);// куда поставить в соотв-и с позицией 
+      elem.innerHTML = html;//текст
+      
+      document.body.append(elem);// вставка
+      positionAt(anchor, position, elem);// куда поставить в соотв-и с позицией 
+    };
+    function getCoords(anchor){ // ф-я получает координаты элемента в контексте документа
+      let box = anchor.getBoundingClientRect();
+      return {
+        top: box.top + pageYOffset,
+        left: box.left + pageXOffset
+      };
+    };
+
+    
+    function positionAt(anchor, position, elem){//функция задающая положения элемента относ-о якоря
+
+      let coords = getCoords(anchor);// устанавливаем координаты элементу, не забываем про "px"!
+      switch(position){
+        case "top":
+        elem.style.top = coords.top - elem.offsetHeight + "px";
+        elem.style.left = coords.left + "px";
+        break;
+        case"right":
+        elem.style.top = coords.top + "px";
+        elem.style.left = coords.left + anchor.offsetWidth + "px";
+        break;
+
+        case"bottom":
+        elem.style.top = coords.top + anchor.offsetHeight + "px";
+        elem.style.left = coords.left + "px"; 
+        break;
+      }
+    }
+    showNote(anchor, "right", 'hello');
+     
+  </script>
+
+  
+</body>
+</html>

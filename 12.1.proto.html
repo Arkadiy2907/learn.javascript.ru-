@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>proto</title>
+</head>
+<body>
+  <script>
+`use strict`
+//пофиксить код alert(speedy.stomach); и тут alert(lazy.stomath); одинаковые значения
+//хотя должны быть разные 
+let hamster = {
+ // stomach: [],//а тут убрал
+  eat(food){
+    this.stomach.push(food);
+  }
+};
+let speedy = {
+  __proto__: hamster,
+  stomach: [] //добавили по этому свойству
+};
+let lazy = {
+  __proto__: hamster,
+  stomach: [] //добавили по этому свойству
+};
+speedy.eat("apple");
+alert(speedy.stomach);
+alert(lazy.stomath);
+//stomach: [] добавили к каждому объекту по своему массиву
+  </script>
+</body>
+</html>

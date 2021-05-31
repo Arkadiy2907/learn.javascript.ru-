@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<META HTTP-EQUIV="Conten-Type"CONTENT="text/html; charset=utf-8">
+<title>рекурсия5 </title>
+<!-- <link rel="stylesheet" href="main.css" Type="text/css"> -->
+</head>
+<body>
+  <p>Перед скриптом...</p>
+  <script>
+  'use strict'
+  // перебрать односвязный список list в обратной последовательности
+ let list = {
+	value : 1,
+	next : {
+		value : 2,
+		next : {
+			value : 3,
+			next : {
+				value : 4,
+				next : null
+			}
+		}
+	}
+	}
+/*	
+ // при помощи цикла
+ function printBack(n){
+ let temp = n;
+ let arr = [];
+ 
+ while(temp){
+ arr.push(temp.value); //при переборе добавляю в массив чтоб его развернуть
+ temp = temp.next;
+ }
+ return arr;
+  };
+ let write = printBack(list)
+							.reverse()	
+							.map(item => alert(item));
+ 
+*/
+/*
+ //при помощи рекурсии из учебника
+   function print(list){
+   
+	 if (list.next){
+	   print(list.next);//тоже для остальной части списка
+	  }
+	  alert(list.value); //выводим текущий элемент
+	} 
+    print(list);
+*/
+/*
+ //игры с цыклами
+ let a = 1;
+ while(a < 10){
+ for (let i = 0; i < a; i++)
+ document.write("*");
+ document.write(`<br>`);
+
+ a++;
+ }
+
+// нахождение мин массива
+ let arr = [-1,2,5,7,8,0],
+	 min_arr = arr[0],
+	 min_i = 0;
+ for(let i = 0; i < arr.length; i++){
+  if(arr[i] < min_arr){
+	 min_arr = arr[i];
+	 min_i = i;
+ }
+ console.log(min_arr);
+ }	 
+*/
+ </script>
+
+ <p>...После скрипта.</p>
+
+</body>
+
+</html> 

@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<META HTTP-EQUIV="Conten-Type"CONTENT="text/html; charset=utf-8">
+<title>рекурсия3 </title>
+<!-- <link rel="stylesheet" href="main.css" Type="text/css"> -->
+</head>
+<body>
+  <p>Перед скриптом...</p>
+  <script>
+  'use strict'
+  // вычисление чисел фибоначи F0=0, F1=1, Fn=F(n-1)+F(n-2)
+  // сложение идет как первых 2-х чисел 0 1 1 2 3 5 8 13 21 
+ 
+ // при помощи цикла
+  function getFibonachi(n){
+   let one = 0,
+   two = 1,
+   arr = [],
+   temp = 0;
+   for (let i = 1; i <= n ; i++){
+	
+	 temp = one + two;
+	 one = two;
+	 two = temp;
+	 // добавил в виде массива хотя можно просто вывести число reyurn temp
+	 arr[i] = temp;
+	}
+	return arr;
+   };
+   //вывод окончания массива
+   alert(getFibonachi(5)[getFibonachi(5).length - 1]); 
+   //через разворот массива
+   //let and = getFibonachi(5).reverse();
+   //alert(and[0]); 
+   
+ /*
+ //при помощи рекурсии но работает дольше
+ 
+ function getFibonachi(n){
+	
+	return n <= 1 ? n: getFibonachi(n-1) + getFibonachi(n-2);
+		 
+  }; 	 
+  
+   console.log(getFibonachi(7));
+  */ 
+
+ </script>
+
+ <p>...После скрипта.</p>
+
+</body>
+
+</html> 

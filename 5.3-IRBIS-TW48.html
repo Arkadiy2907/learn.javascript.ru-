@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<META HTTP-EQUIV="Conten-Type"CONTENT="text/html; charset=utf-8">
+<title>вычисление топ зп </title>
+<!-- <link rel="stylesheet" href="main.css" Type="text/css"> -->
+</head>
+<body>
+  <p>Перед скриптом...</p>
+  <script>
+  'use strict'
+  // есть объект с з п сотрудников нужно имя с макс зп, если объект отсутствует то нулл и еслм есть одинаковые то любого топ зп
+
+   
+  let users = {
+  'vasya':100,
+  'petya':120,
+  'masha':90
+  }; 
+  
+  function topSalaries (users){
+  
+	let topName = null;
+	let topSalar = 0;
+	
+	for (let [name, salar] of Object.entries(users) ){ //перебираем с деструктуризацией из преобразованного массива из объекта
+		if (salar > topSalar){
+		topName = name;
+		topSalar = salar;
+		}
+	}
+	return topName;
+	};
+  console.log(topSalaries (users));
+  alert (topSalaries (users));
+			
+ </script>
+
+ <p>...После скрипта.</p>
+
+</body>
+
+</html> 

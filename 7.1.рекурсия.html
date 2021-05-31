@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<META HTTP-EQUIV="Conten-Type"CONTENT="text/html; charset=utf-8">
+<title>рекурсия1 </title>
+<!-- <link rel="stylesheet" href="main.css" Type="text/css"> -->
+</head>
+<body>
+  <p>Перед скриптом...</p>
+  <script>
+  'use strict'
+  // вычисление суммы чисел до данного
+ /* for (let z = 0; z<1000; z++){ //пробовал срквнить по времени работу с итерацией и рекурсией
+	 let start1 = Date.now(); й
+ */
+ // при помощи цикла
+  function getSum1 (n){
+   let result = 0;
+    for (let i = 0; i < n ; i++){
+	 
+	result += n - i;
+	}
+	return result;
+  }
+	console.log(getSum1(3));
+/*	let end1 = Date.now();
+	let diff1 = `${end1 - start1}`; 
+  //console.log(diff1);
+*/ 
+ /*let start2 = Date.now(); 
+ */
+/* //при помощи рекурсии
+ function getSum2 (n){
+	 return n == 1 ? n: n + getSum2(n-1);
+ }  
+*/  
+  // console.log(getSum2(100));
+/* let end2 = Date.now();
+ //console.log(start2);
+ //console.log(end2);
+ let diff2 = `${end2 - start2}`; 
+ //console.log(diff2);
+ console.log(`${diff1 - diff2}`);
+ }
+ */
+ </script>
+
+ <p>...После скрипта.</p>
+
+</body>
+
+</html> 

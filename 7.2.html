@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<META HTTP-EQUIV="Conten-Type"CONTENT="text/html; charset=utf-8">
+<title>рекурсия2 </title>
+<!-- <link rel="stylesheet" href="main.css" Type="text/css"> -->
+</head>
+<body>
+  <p>Перед скриптом...</p>
+  <script>
+  'use strict'
+  // вычисление факториала n! = n*(n-1)*(n-2)*...*1
+
+ // при помощи цикла
+  function getFactorial(n){
+   let result = 1;
+    for (let i = 0; i < n ; i++){
+	 
+	result *= (n - i);
+//	console.log(result);
+	}
+	return result;
+  }
+	console.log(getFactorial(4));
+
+ /*
+ //при помощи рекурсии
+ function getFactorial (n){
+	 return n == 1 ? n: n * getFactorial(n-1);
+ }  
+  
+   console.log(getFactorial(2));
+*/
+ </script>
+
+ <p>...После скрипта.</p>
+
+</body>
+
+</html> 

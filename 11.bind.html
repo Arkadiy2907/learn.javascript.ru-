@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>bind</title>
+</head>
+<body>
+  <script>
+`use strict`
+//пофиксить баг
+function askPassword(ok, fail) {
+  let password = prompt("Please write password",'');
+  if (password == "roc") {
+    ok();
+  } else{
+    fail();
+  }
+};
+let user = {
+  name: "Vova",
+  loginOk(){
+    alert(`${this.name} good !`);
+  },
+  loginFail(){
+    alert(`${this.name} fail !`);
+  }
+};
+//надо исправить эту строку
+//askPassword(user.loginOk, user.loginFail);//тут потерян this
+//исправил так тут был потерян контекст
+askPassword(user.loginOk.bind(user), user.loginFail.bind(user));
+
+  </script>
+</body>
+</html>

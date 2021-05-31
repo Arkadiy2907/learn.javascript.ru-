@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<META HTTP-EQUIV="Conten-Type"CONTENT="text/html; charset=utf-8">
+<title>filter porn</title>
+<!-- <link rel="stylesheet" href="main.css" Type="text/css"> -->
+</head>
+<body>
+  <p>Перед скриптом...</p>
+  <script>
+  'use strict'
+  let str = prompt (`input string`,`no`);
+  function checkSpam(str){
+  let strSmall = (`${str}`.toLowerCase() );
+  console.log(strSmall);
+	if ( (strSmall.includes(`sex`) ) || (strSmall.includes(`xxx`)) || (strSmall.includes(`viagra`) ) ) {
+		return true;
+		} else {	
+		return false;
+	};
+	};
+  alert( checkSpam(str) );
+  </script>
+
+  <p>...После скрипта.</p>
+
+</body>
+
+</html>

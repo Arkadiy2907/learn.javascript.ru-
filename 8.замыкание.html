@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<META HTTP-EQUIV="Conten-Type"CONTENT="text/html; charset=utf-8">
+<title>замыкание </title>
+<!-- <link rel="stylesheet" href="main.css" Type="text/css"> -->
+</head>
+<body>
+  <p>Перед скриптом...</p>
+  <script>
+  'use strict'
+  // написать функцию sum где sum(a)(b) = a+b
+/*  
+ 
+ function sum(a){
+  return function(b){
+   return a + b;
+  };
+ };
+ 
+ alert(sum(1)(2));
+ */
+ /*
+ //пример замыкание
+ function create(n){
+  return function(){
+  console.log(100*n);
+  }
+ }
+ let multipl = create(42);
+ multipl();
+*/
+// создать функцию фильтров 1)выводит значения из массива меж а и б эл-и
+ let arr = [1,2,3,4,5,6,7]
+  
+ /*function inBetween(a,b){
+  //мой вариант
+  let aIndex = arr.indexOf(a);//нашли первый индекс массива
+  let bIndex = arr.indexOf(b);//нашли последний индекс 
+  return arr.slice(aIndex, bIndex + 1); //созд нов массив и +1 чтоб последний эл был вкл 
+ }
+ console.log(inBetween(2,5)); 
+  */
+  /*
+  //вариант из учебника выводятся значения входящие с а по б не по индексу
+    function inBetween(a,b){
+		return function(x){
+		return x >= a && x <= b;
+		};
+	}  
+	alert(arr.filter(inBetween(3,6)));
+ */
+ 
+ /*
+// создать функцию находящую совпадение между массивами
+ function inArray([...arr2]){
+ // в сет заводим чтоб не повторялись. и каждый эл арр2 проверяем тру м все что тру идет в нов массив
+ //мой вариант
+ return [...new Set(arr)].filter(item => arr2.includes(item)); 
+ 
+ }	
+console.log(inArray([2,10,3]));
+*/
+//вариант из учебника создать функцию находящую совпадение между массивами
+
+	function inArray(arr){
+	    return function(x){
+		return arr.includes(x);
+		};
+	} 
+	let read = inArray();
+	console.log(read); 
+	console.log(arr.filter(inArray([1,2,3])));
+
+
+ </script>
+
+ <p>...После скрипта.</p>
+
+</body>

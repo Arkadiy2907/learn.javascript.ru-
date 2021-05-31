@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<META HTTP-EQUIV="Conten-Type"CONTENT="text/html; charset=utf-8">
+<title>замыкание </title>
+<!-- <link rel="stylesheet" href="main.css" Type="text/css"> -->
+</head>
+<body>
+  <p>Перед скриптом...</p>
+  <script>
+  'use strict'
+  //  работает код он исправлен
+	function makeArmy(){
+		let shuters = [];
+		//let i = 0;
+		for(let i = 0; i < 10; i++){
+			let shuter = function (){
+			console.log(i);
+			alert(i);
+			} 
+		shuters.push(shuter);
+				
+	
+		}
+	console.log(shuters);	
+	return shuters;
+	}
+	let army = makeArmy();
+	console.log(army);
+	army[0]();
+	army[8]();
+	
+	
+	//console.log(users.map(item => item.name));	
+ </script>
+
+ <p>...После скрипта.</p>
+
+</body>

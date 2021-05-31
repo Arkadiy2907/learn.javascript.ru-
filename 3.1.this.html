@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+  <p>Перед скриптом...</p>
+  <script>
+  'use strict'
+    let a, b;
+  let calculator = {
+   read(){
+   this.a= +prompt (`input a`, 1);
+   this.b= +prompt (`input b`, 1);
+   },
+   sum(){
+   return this.a + this.b;
+   },
+   mul(){
+   return this.a * this.b;
+   }
+   }
+  calculator.read();
+  alert( calculator.sum() );
+  alert( calculator.mul() );
+
+  </script>
+
+  <p>...После скрипта.</p>
+
+</body>
+
+</html>

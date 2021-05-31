@@ -1,0 +1,25 @@
+<html>
+<head>
+</head>
+<script>
+function initTable()
+{
+var rowCount=10;
+var colCount=10;
+var tbl=document.getElementById('tbl');
+for (var i=0; i<rowCount; i++)
+{
+var row=tbl.insertRow(i);
+for (var j=0; j<colCount; j++)
+{
+var cell=row.insertCell(j);
+cell.innerHTML='cell'+i.toString()+j.toString();
+}
+}
+}
+</script>
+<body onload='initTable();'>
+<table id='tbl' border='2' width='80%' height='80%'>
+</table>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>выделить ссылки</title>
+</head>
+<body>
+<!--   Сделайте все внешние ссылки оранжевыми, изменяя их свойство style.
+
+Ссылка является внешней, если:
+
+Её href содержит ://
+Но не начинается с http://internal.com. -->
+  <a name="list">the list</a>
+<ul>
+  <li><a href="http://google.com">http://google.com</a></li>
+  <li><a href="/tutorial">/tutorial.html</a></li>
+  <li><a href="local/path">local/path</a></li>
+  <li><a href="ftp://ftp.com/my.zip">ftp://ftp.com/my.zip</a></li>
+  <li><a href="http://nodejs.org">http://nodejs.org</a></li>
+  <li><a href="http://internal.com/test">http://internal.com/test</a></li>
+</ul>
+
+<script>
+   
+  // добавление стиля для одной ссылки
+  let link = document.querySelectorAll('a');
+  for(let tagA of link){
+    let href = tagA.getAttribute(`href`);
+    if (!href) continue; //есть ли сам атрибут hrif
+    if (href.includes("http://internal.com/")) continue;
+    if (!href.includes('://')) continue;
+    
+    tagA.style.color = 'orange';
+   /*  let href = tagA.getAttribute('href');
+    if (!href) continue; // нет атрибута
+
+    if (!href.includes('://')) continue; // нет протокола
+
+    if (href.startsWith('http://internal.com')) continue; // внутренняя
+
+    tagA.style.color = 'orange'; */
+
+  }
+  
+</script>
+</body>
+</html>

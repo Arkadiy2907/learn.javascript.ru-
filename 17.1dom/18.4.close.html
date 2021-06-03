@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>close</title>
+  <meta name="description" content="При помощи JavaScript для каждого сообщения добавьте в верхний правый угол кнопку закрытия">
+  <style type="text/css">
+    
+  </style>
+</head>
+<body>
+  <div>
+    <div class="pane">
+      <h3>horse</h3>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam, eligendi! Pariatur assumenda eveniet saepe dignissimos voluptatum optio earum consequatur minima reiciendis maxime ex, qui ducimus sunt dolorum dicta rem iure?</p>
+    </div>
+    <div class="pane">
+      <h3>cat</h3>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis nobis expedita fugiat impedit perferendis vitae, placeat distinctio maxime nemo dolorum possimus inventore nostrum recusandae sed suscipit sint architecto. Nam, animi!</p>
+    </div>
+    <div class="pane">
+      <h3>dog</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo cupiditate animi voluptatem sit placeat totam esse, expedita, ipsum voluptates mollitia commodi. Laboriosam explicabo inventore temporibus beatae, sed repellat dignissimos dolorem!</p>
+    </div>
+  </div>
+  
+  <script>
+    let panes = document.querySelectorAll('.pane');
+
+    for(let pane of panes){
+      pane.insertAdjacentHTML("afterbegin", '<botton class="remove-botton">[x]</botton>');
+      pane.firstChild.onclick=()=>pane.remove();
+    }
+  </script>
+</body>
+</html>

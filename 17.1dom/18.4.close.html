@@ -30,9 +30,9 @@
   <script>
     let panes = document.querySelectorAll('.pane');
 
-    for(let pane of panes){
-      pane.insertAdjacentHTML("afterbegin", '<botton class="remove-botton">[x]</botton>');
-      pane.firstChild.onclick=()=>pane.remove();
+    for(let pane of panes){//перебор панелей
+      pane.insertAdjacentHTML("afterbegin", '<botton class="remove-botton">[x]</botton>'); //вставляем и создаетем кнопку для удаления 
+      pane.firstChild.onclick=()=>pane.remove();//при нажатии удалить
     }
   </script>
 </body>

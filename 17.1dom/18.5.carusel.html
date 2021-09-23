@@ -27,13 +27,13 @@
     }
     .arrow {
       position: absolute;
-      top: 60px;
+      top: 8px;
       padding: 0;
-      background: greenyellow;
+      background: rgb(39, 221, 221);
       border-radius: 15px;
-      border: 1px solid gainsboro;
-      font-size: 24px;
-      line-height: 24px;
+      border: 1px solid rgb(173, 152, 248);
+      font-size: 30px;
+      line-height: 130px;
       color: gold;
       display: block;
     }
@@ -60,7 +60,7 @@
       margin: 0;
       padding: 0;
       list-style: none;
-      transition: margin-left 250ms;
+      transition: margin-left 950ms;
       font-size: 0;
     }
     .gallery li {
@@ -99,7 +99,7 @@
 
   //конфигурация
   let width = 130; //ширина картинки
-  let count = 3; //количество видимых картинок
+  let count = 1; //количество видимых картинок
   let list = carousel.querySelector('ul');
   let listElems = carousel.querySelectorAll('li');
   let position = 0; //положение ленты прокуртки
@@ -112,8 +112,8 @@
   };
   carousel.querySelector('.next').onclick = function(){
     position -= width * count; //сдвиг вправо
-    //последнее передвижение может сдвинуться только на 3 а не на 2 или 1эл
-    position = Math.max(position, -width * (listElems.length - count));
+    //последнее передвижение может сдвинуться только на 3 а не на 2 или 1эл сейчас 1 т к поставил 3 в конце
+    position = Math.max(position, -width * (listElems.length - count *3));
     list.style.marginLeft = position + 'px';  
   };
 

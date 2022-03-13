@@ -15,7 +15,7 @@
 	let sumAll = a;//1)присваивает локальной переменной sumAll знач а
 	function sumAfter(b){ //3)добавляет значение sumAll следующий аргумент Б
 		sumAll += b; // складываются значения последующих аргументов и сохраняются в sumAll
-		return sumAfter; //4)и возвращает функцию sumAfter для следующего т е (b)(c)и т д
+		return sumAfter; //4)и возвращает функцию sumAfter для следующего т е (b)(c)и т д (без скобок т е само тело ф-и)
 	};
 	sumAfter.toString = function(){
 		return sumAll;

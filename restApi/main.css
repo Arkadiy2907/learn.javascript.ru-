@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    font-size: 5rem;
+    font-family: 'Puppies Play', cursive;
+    margin-top: 5rem;
+}
+
+.bodyEl{
+    display: flex;
+    justify-content: center;
+}
+
+ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border: 2px solid rgb(202, 202, 202);
+    padding: 5px;
+    border-radius: 5px;
+    list-style-type: none;
+    margin: 5px;
+}
+
+li{
+    border: 2px solid rgb(185, 185, 185);
+    padding: 5px;
+    margin: 2px;
+}
